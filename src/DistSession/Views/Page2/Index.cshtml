@@ -1,0 +1,35 @@
+﻿@model DistSession.ViewModel.UserData
+@{
+    ViewData["Title"] = "Page2";
+}
+
+<div>
+    <h4>Page2</h4>
+
+    <dl class="row">
+        <dt class="col-sm-2">Server IP</dt>
+        <dd class="col-sm-3">@ViewData["SvrIp"]</dd>
+        <dt class="col-sm-2">Host Name</dt>
+        <dd class="col-sm-3">@ViewData["SvrHost"]</dd>
+    </dl>
+
+    <dl class="row">
+        <dt class="col-sm-2">@Html.DisplayNameFor(model=>model.AgentId)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model=>model.AgentId)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model=>model.AgentName)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model=>model.AgentName)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model=>model.DeptID)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model=>model.DeptID)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model=>model.DeptName)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model=>model.DeptName)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model=>model.RoleID)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model=>model.RoleID)</dd>
+
+        <dt class="col-sm-2">@Html.DisplayNameFor(model=>model.LoginTime)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model=>model.LoginTime)</dd>
+    </dl>
+</div>

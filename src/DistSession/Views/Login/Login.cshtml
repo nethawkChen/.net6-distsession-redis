@@ -1,0 +1,83 @@
+﻿@model DistSession.ViewModel.UserData
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <title>Redis Session Demo</title>
+</head>
+<body>
+    <br />
+    <br />
+    <div class="container">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <h1>Session Test</h1>
+                <div class="card">
+                    <div class="card-header">輸入登入資料</div>
+                    <div class="card-body">
+                        <form asp-action="Login" asp-controller="Login">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="row mb-3">
+                                <label asp-for="AgentId" class="col-sm-2 col-form-label">員工編號</label>
+                                <div class="col-sm-10">
+                                    <input asp-for="AgentId" class="form-control" />
+                                    <span asp-validation-for="AgentId" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label asp-for="AgentName" class="col-sm-2 col-form-label">員工姓名</label>
+                                <div class="col-sm-10">
+                                    <input asp-for="AgentName" class="form-control" />
+                                    <span asp-validation-for="AgentName" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label asp-for="DeptID" class="col-sm-2 col-form-label">部門編號</label>
+                                <div class="col-sm-10">
+                                    <input asp-for="DeptID" class="form-control" />
+                                    <span asp-validation-for="DeptID" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label asp-for="DeptName" class="col-sm-2 col-form-label">部門名稱</label>
+                                <div class="col-sm-10">
+                                    <input asp-for="DeptName" class="form-control" />
+                                    <span asp-validation-for="DeptName" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label asp-for="RoleID" class="col-sm-2 col-form-label">角色代碼</label>
+                                <div class="col-sm-10">
+                                    <input asp-for="RoleID" class="form-control" />
+                                    <span asp-validation-for="RoleID" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row mb-3">
+                                <input type="submit" value="登入" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <span class="text-danger  justify-content-center">@ViewData["ErrorMessage"]</span>
+                    </div>
+
+                </div>
+
+                <div>
+                    Server:@ViewData["SvrHost"]
+                </div>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </div>
+</body>
+</html>
